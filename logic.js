@@ -10,22 +10,20 @@ function computerPlay (options) {
 }
 
 // take user input on rock, paper, or scissor
-function playerSelection () {
-    var choice = prompt(String("What is your move? Choose 'rock', 'paper', or 'scissors'."))
-    var finalChoice = String(choice.toLowerCase());
-    return finalChoice;
+function playerSelection (choice) {
+    console.log(choice)
+    return String(choice);
 }
 
 // compare user input and computer input
 
-function playRound () {
+function playRound (user_choice) {
     const options = ["rock", "paper", "scissors"];
     let computer_choice = computerPlay (options);
-    let user_choice = playerSelection ();
     console.log (computer_choice);
     console.log (user_choice);
 
-    function winner (comp_choice, player_choice) {
+    function winner (computer_choice, user_choice) {
         if (computer_choice === "rock" && user_choice === "paper") {
             return "Player wins! Rock beats paper!"
         } else if (computer_choice === "rock" && user_choice === "rock") {
@@ -51,18 +49,38 @@ function playRound () {
     console.log (game_winner);
 }
 
+const rock_btn = document.querySelector("#rock-button");
+console.log (rock_btn);
+rock_btn.addEventListener("click", function(event) {
+    playRound("rock");
+});
 
-function game () {
-    let round_one = playRound ();
-    console.log (round_one);
-    let round_two = playRound ();
-    console.log (round_two);
-    let round_three = playRound ();
-    console.log (round_three);
-    let round_four = playRound ();
-    console.log (round_four);
-    let round_five = playRound ();
-    console.log (round_five);
-}
+const paper_btn = document.querySelector("#paper-button");
+console.log (paper_btn);
+paper_btn.addEventListener("click", function(event) {
+    playRound("paper");
+});
 
-game()
+const scissors_btn = document.querySelector("#scissors-button");
+console.log (scissors_btn);
+scissors_btn.addEventListener("click", function(event) {
+    playRound("scissors");
+});
+
+
+
+
+// function game () {
+//     let round_one = playRound ();
+//     console.log (round_one);
+//     let round_two = playRound ();
+//     console.log (round_two);
+//     let round_three = playRound ();
+//     console.log (round_three);
+//     let round_four = playRound ();
+//     console.log (round_four);
+//     let round_five = playRound ();
+//     console.log (round_five);
+// }
+
+// game()
