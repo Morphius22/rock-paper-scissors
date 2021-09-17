@@ -17,6 +17,15 @@ function playerSelection (choice) {
     return String(choice);
 }
 
+function deleteText () {
+    setTimeout(function(){ 
+        let el1 = document.querySelector(".score"); 
+        let el2 = document.querySelector(".choices");
+        el1.remove();
+        el2.remove()
+      }, 3000);
+}
+
 // compare user input and computer input
 
 function playRound (user_choice) {
@@ -61,19 +70,6 @@ function playRound (user_choice) {
         }
     }
 
-    function removeLastRound (){
-        setTimeout(function(){
-            $('.choices').remove();
-          }, 5000);
-
-          setTimeout(function(){
-            $('.score').remove();
-          }, 5000);
-
-          setTimeout(function(){
-            $('.final-winner').remove();
-          }, 5000);
-    }
 
     function winner (computer_choice, user_choice) {
         if (computer_choice === "rock" && user_choice === "paper") {
@@ -81,60 +77,60 @@ function playRound (user_choice) {
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Player wins! Rock beats paper!"
         } else if (computer_choice === "rock" && user_choice === "rock") {
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Its a tie! You both selected rock."
         } else if (computer_choice === "rock" && user_choice === "scissors") {
             computer_score += 1;
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Computer wins! Rock beats scissors!" 
         } else if (computer_choice === "paper" && user_choice === "paper") {
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Its a tie! You both selected paper."
         } else if (computer_choice === "paper" && user_choice === "rock") {
             computer_score += 1;
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Computer wins! Paper beats rock!" 
         } else if (computer_choice === "paper" && user_choice === "scissors") {
             player_score += 1;
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Player wins! Scissors beat paper!" 
         } else if (computer_choice === "scissors" && user_choice === "paper") {
             computer_score += 1;
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Computer wins! Scissors beat paper."
         } else if (computer_choice === "scissors" && user_choice === "rock") {
             player_score += 1;
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Player wins! Rock beats scissors!" 
         } else if (computer_choice === "scissors" && user_choice === "scissors") {
             displayChoices();
             displayScore();
             determineFinalWinner ();
-            removeLastRound ()
+            deleteText ()
             return "Its a tie! You both selected scissors!" 
         }
     }
