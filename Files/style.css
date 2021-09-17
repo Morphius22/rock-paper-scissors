@@ -30,18 +30,17 @@ html {
     padding: 0.5rem 1rem;
     margin: 1rem 0.5rem;
     text-decoration: none;
-    color: #3c4043;
     font-family: sans-serif;
     font-size: 14px;
     cursor: pointer;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
+    background: transparent;
 }
 
 button:hover,
 button:focus {
-    background: #f8f9fa;
 }
 
 button:focus {
@@ -82,8 +81,12 @@ a, a:hover, a:focus, a:active {
     font-weight: 100;
 }
 
-img {
-    height: auto;
+.buttons img {
+    height: 100px;
     width: 100px;
-    background-color: none;
+    background: transparent;
+}
+
+.buttons #rock-button, #paper-button, #scissors-button {
+    background: transparent;
 }
